@@ -52,7 +52,7 @@ export default class App extends Component {
     }
 
     addItem(body){
-        
+
         const newItem = {
             label: body,
             important: false,
@@ -60,7 +60,6 @@ export default class App extends Component {
         }
         this.setState(({data}) => {
             const newArr = [...data, newItem];
-
             return {
                 data: newArr
             }
