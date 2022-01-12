@@ -1,24 +1,16 @@
 import React from "react";
 import './post-list-item.css'
 
-export default class PostListItem extends React.Component {
+function PostListItem ({label, onDelete, onToggleImportant, onToggleLike, important, like}){
+    let classNames = 'app-list-item d-flex justify-content-between'
 
+    if(important){
+        classNames += ' important';
+    }
+    if(like){
+        classNames += ' like';
+    }
 
-
-
-
-
-    render() {
-        const {label, onDelete, onToggleImportant, onToggleLike, important, like} = this.props
-
-        let classNames = 'app-list-item d-flex justify-content-between'
-
-        if(important){
-            classNames += ' important';
-        }
-        if(like){
-            classNames += ' like';
-        }
     return (
         <div className={classNames}>
             <span
@@ -46,9 +38,9 @@ export default class PostListItem extends React.Component {
             </div>
         </div>
     )
-    }
+
 }
 
-
+export default PostListItem
 
 
